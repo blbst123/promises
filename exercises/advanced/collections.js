@@ -1,3 +1,6 @@
+var fs = require('fs');
+var { getStatusCodeAsync, pluckFirstLineFromFileAsync } = require('../bare_minimum/promiseConstructor');
+
 /**
  * Using Promise.all, write a function, combineFirstLineOfManyFiles, that:
  *    1. Reads each file at the path in the `filePaths` array
@@ -9,9 +12,44 @@
  */
 
 
-var combineFirstLineOfManyFiles = function(filePaths, writePath) {
- // TODO
-};
+// var combineFirstLineOfManyFiles = function (filePaths, writePath) {
+//   const firstLinePromise = new Promise((resolve, reject) => {
+//     fs.readdir(filePaths, (err, files) => {
+//       if (err) reject(err)
+//       else resolve(files)
+//     });
+//   });
+/*
+firstLinePromise.then(function(files) {
+
+})
+    var allPromises = files.map(fileName => {
+
+    });
+
+    Promise.all(allPromises).then(function (values) {
+      var text = values.join("");
+      fs.writeFile(writePath, text, (err) => {
+        if (err) throw new Error('Error writing file with ' + err);
+      });
+    });
+  });
+});
+*/
+
+
+//   console.log(filePaths);
+//   console.log(fileName);
+//   let path = filePaths + '/' + fileName;
+//   return new Promise((resolve, reject) => {
+//     pluckFirstLineFromFileAsync(path, (err, fileData) => {
+//       if (err) reject(err);
+//       else resolve(fileData);
+//     });
+//   });
+
+//   return firstLinePromise;
+// };
 
 // Export these functions so we can unit test them
 module.exports = {
